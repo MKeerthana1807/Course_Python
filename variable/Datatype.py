@@ -1,4 +1,4 @@
-Name = "Keerthna"
+Name = "Keerthana"
 Age = 24
 Height = 135.7
 Weight = 40
