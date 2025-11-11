@@ -1,4 +1,5 @@
-# Task 1: Student Marks Analysis
+# ===== Task 1: Student Marks Analysis =====
+
 # List of tuples: (Student Name, (Marks in 3 subjects))
 students = [
     ("Alice", (85, 90, 78)),
@@ -6,35 +7,42 @@ students = [
     ("Charlie", (95, 88, 92))
 ]
 
-# Function to display marks, average, and highest mark
-def display_student_details(students_list):
-    for name, marks in students_list:
-        print(f"{name}: ", end="")
-        for i, mark in enumerate(marks, start=1):
-            print(f"Subject {i}: {mark}", end=", " if i < len(marks) else "")
-        print()
-
-
-        avg = sum(marks) / len(marks)
-        print(f"Average Marks of {name}: {avg:.2f}")
-
-    
-        highest = max(marks)
-        print(f"Highest Mark of {name}: {highest}\n")
-
-# Step 1–3: Display initial student data
+# Step 1: Print each student's marks using nested loops
 print("===== Student Marks Analysis =====")
-display_student_details(students)
+for name, marks in students:
+    print(f"{name}: ", end="")
+    for i, mark in enumerate(marks, start=1):
+        print(f"Subject {i}: {mark}", end=", " if i < len(marks) else "")
+    print()
 
-# Step 4: Add new student
+    # Step 2: Calculate average marks
+    avg = sum(marks) / len(marks)
+    print(f"Average Marks of {name}: {avg:.2f}")
+
+    # Step 3: Find highest mark using tuple method
+    highest = max(marks)
+    print(f"Highest Mark of {name}: {highest}\n")
+
+# Step 4: Add a new student and repeat steps
 students.append(("David", (88, 76, 90)))
 
-# Repeat steps 1–3 for updated list
 print("===== After Adding New Student =====")
-display_student_details(students)
+for name, marks in students:
+    print(f"{name}: ", end="")
+    for i, mark in enumerate(marks, start=1):
+        print(f"Subject {i}: {mark}", end=", " if i < len(marks) else "")
+    print()
+
+    avg = sum(marks) / len(marks)
+    print(f"Average Marks of {name}: {avg:.2f}")
+
+    highest = max(marks)
+    print(f"Highest Mark of {name}: {highest}\n")
 
 
-# Task 2: Grocery Store Inventory
+
+# ===== Task 2: Grocery Store Inventory =====
+
 # List of lists: [Category, [Items]]
 inventory = [
     ["Fruits", ["Apple", "Banana", "Mango"]],
@@ -42,17 +50,13 @@ inventory = [
     ["Dairy", ["Milk", "Cheese", "Yogurt"]]
 ]
 
-# Function to display inventory
-def display_inventory(inv):
-    for category, items in inv:
-        print(f"Category: {category}")
-        for item in items:
-            print(f" - {item}")
-        print()
-
-# Step 1: Print all categories and items
+# Step 1: Print all categories and items using nested loops
 print("===== Grocery Store Inventory =====")
-display_inventory(inventory)
+for category, items in inventory:
+    print(f"Category: {category}")
+    for item in items:
+        print(f" - {item}")
+    print()
 
 # Step 2: Add "Orange" to Fruits
 for category, items in inventory:
@@ -71,4 +75,8 @@ for category, items in inventory:
 
 # Step 5: Print updated inventory
 print("\n===== Updated Inventory =====")
-display_inventory(inventory)
+for category, items in inventory:
+    print(f"Category: {category}")
+    for item in items:
+        print(f" - {item}")
+    print()
